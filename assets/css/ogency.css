@@ -4206,7 +4206,8 @@ h6 {
   -webkit-transition: -webkit-transform 400ms ease;
   transition: -webkit-transform 400ms ease;
   transition: transform 400ms ease;
-  transition: transform 400ms ease,  -webkit-transform 500ms ease;
+  transition: transform 400ms ease, 
+ -webkit-transform 500ms ease;
 }
 
 @media (max-width: 360px) {
@@ -4276,7 +4277,8 @@ h6 {
   -webkit-transition: -webkit-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
-  transition: transform 500ms ease,  -webkit-transform 500ms ease;
+  transition: transform 500ms ease, 
+ -webkit-transform 500ms ease;
   z-index: 2;
 }
 
@@ -4987,8 +4989,22 @@ h6 {
 .service-one__item {
   position: relative;
   background-color: var(--ogency-black2);
-  padding: 40px 50px 33px;
+  padding: 40px 50px;
+  min-height: 348px;
 }
+
+.service-one__item:hover {
+  background-color: var(--ogency-base);
+  color: var(--ogency-white);
+  
+  .service-one__item__title {
+    color: var(--ogency-black);
+
+    
+  }
+
+}
+
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .service-one__item {
@@ -5028,27 +5044,27 @@ h6 {
 }
 
 .service-one__item__title {
-  font-size: 18px;
+  font-size: 25px;
   letter-spacing: -.72px;
   line-height: 24px;
   max-width: 135px;
   margin: 0 0 19px;
+
 }
 
-.service-one__item__title a {
-  color: inherit;
+.service-one__item__title {
+  color: inherit
+  
 }
 
-.service-one__item__title a:hover {
-  color: var(--ogency-base);
-}
+/* .service-one__item__title:hover {
+  color: var(--ogency-black);
+} */
 
 .service-one__item__text {
   font-size: 14px;
   line-height: 24px;
   margin: 0 0 9px;
-  padding: 0 0 24px;
-  border-bottom: 1px solid RGBA(var(--ogency-white-rgb), 0.1);
 }
 
 .service-one__item__btn {
@@ -5539,7 +5555,7 @@ h6 {
   min-height: 60px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--ogency-black3);
+  -webkit-text-stroke-color: var(--ogency-base);
   transition: all 400ms ease;
 }
 
@@ -5599,7 +5615,7 @@ h6 {
 .project-one__item__btn {
   width: 91px;
   height: 91px;
-  background-color: var(--ogency-black2);
+  background-color: var(--ogency-base);
   color: var(--ogency-black);
   display: flex;
   justify-content: center;
