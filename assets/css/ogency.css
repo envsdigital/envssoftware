@@ -6041,7 +6041,11 @@ h6 {
 .team-one__item__image img {
     width: 100%;
     height: auto;
-    /* mix-blend-mode: luminosity; */
+    mix-blend-mode: luminosity;
+}
+
+.team-one__item__image img:hover {
+    mix-blend-mode: normal;
 }
 
 .team-one__item:hover .team-one__item__image::after {
