@@ -10,11 +10,7 @@
             href="assets/images/favicons/favicon.png"
             type="image/x-icon"
         />
-        <style>
-           .VJL48qbQzWENTFAh1Knk {
-                display: none !important;
-            }
-        </style>
+       
     </head>
 
     <body style="background-color: black" class="custom-cursor">
@@ -28,7 +24,13 @@
             type="text/javascript"
             src="https://assets.calendly.com/assets/external/widget.js"
             async
-            document.querySelector('a.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil').style.display = 'none';
+
+            document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil').forEach(function(el) {
+        el.style.display = 'none';
+    });
+});
+
         ></script>
         <!-- Widget em linha do Calendly - fim -->
     </body>
