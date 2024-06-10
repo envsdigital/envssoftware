@@ -6,6 +6,12 @@
     <title>Envs Software</title>
     <!-- favicons Icons -->
     <link rel="shortcut icon" href="assets/images/favicons/favicon.png" type="image/x-icon" />
+    <style>
+        /* Oculta o link dentro do texto */
+        .resultTitle a {
+            display: none;
+        }
+    </style>
 </head>
 <body style="background-color: black" class="custom-cursor">
     <!-- Widget em linha do Calendly - início -->
@@ -13,21 +19,5 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <!-- Widget em linha do Calendly - fim -->
 
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new MutationObserver(function(mutationsList) {
-                for (let mutation of mutationsList) {
-                    if (mutation.type === 'childList') {
-                        const links = document.querySelectorAll('a.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil');
-                        links.forEach(function(el) {
-                            el.style.display = 'none';
-                        });
-                    }
-                }
-            });
-
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
-    </script>
 </body>
 </html>
