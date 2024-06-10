@@ -15,9 +15,18 @@
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil').forEach(function(el) {
-                el.style.display = 'none';
+            const observer = new MutationObserver(function(mutationsList) {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        const links = document.querySelectorAll('a.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil');
+                        links.forEach(function(el) {
+                            el.style.display = 'none';
+                        });
+                    }
+                }
             });
+
+            observer.observe(document.body, { childList: true, subtree: true });
         });
     </script>
 </body>
