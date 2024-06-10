@@ -14,21 +14,18 @@
     <!-- Widget em linha do Calendly - fim -->
 
     <script>
-// Função para remover a tag <a> do iframe após um intervalo de tempo
-function removerTagA() {
-    // Seleciona o elemento <a> após um intervalo de 1 segundo
-    setTimeout(function() {
-        var link = document.querySelector('.calendly-inline-widget a');
-        if (link) {
-            // Remove o elemento <a> do DOM
-            link.parentNode.removeChild(link);
-        }
-    }, 1000); // 1000 milissegundos = 1 segundo
+    // Função para remover o link <a> do trecho de código fornecido
+function removerLinkA() {
+    var link = document.querySelector('.VJL48qbQzWENTFAh1Knk.e9TS9yoMqqIN2PqBo1QG._i6SG2jlTfccH2ZZblil');
+    if (link) {
+        // Remove o elemento <a> do DOM
+        link.parentNode.removeChild(link);
+    }
 }
 
-// Chama a função para remover a tag <a> após a página ser carregada
+// Chama a função para remover o link <a> após a página ser carregada
 window.onload = function() {
-    removerTagA();
+    removerLinkA();
 };
 
     </script>
