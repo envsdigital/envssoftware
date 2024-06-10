@@ -14,28 +14,19 @@
     <!-- Widget em linha do Calendly - fim -->
 
     <script>
-        // Função para remover a tag <a> do iframe
+// Função para remover a tag <a> do iframe após um intervalo de tempo
 function removerTagA() {
-    // Seleciona o iframe
-    var iframe = document.querySelector('.calendly-inline-widget');
-    
-    // Verifica se o iframe foi encontrado
-    if (iframe) {
-        // Obtém o conteúdo do iframe
-        var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
-        
-        // Seleciona o elemento <a> dentro do iframe
-        var link = iframeContent.querySelector('a');
-        
-        // Verifica se o elemento <a> foi encontrado
+    // Seleciona o elemento <a> após um intervalo de 1 segundo
+    setTimeout(function() {
+        var link = document.querySelector('.calendly-inline-widget a');
         if (link) {
             // Remove o elemento <a> do DOM
             link.parentNode.removeChild(link);
         }
-    }
+    }, 1000); // 1000 milissegundos = 1 segundo
 }
 
-// Chama a função para remover a tag <a> assim que a página for carregada
+// Chama a função para remover a tag <a> após a página ser carregada
 window.onload = function() {
     removerTagA();
 };
