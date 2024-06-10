@@ -12,5 +12,34 @@
     <div class="calendly-inline-widget" data-url="https://calendly.com/envssoftware/reuniao-envs-software?primary_color=e88d0a" style="min-width: 320px; height: 700px"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <!-- Widget em linha do Calendly - fim -->
+
+    <script>
+        // Função para remover a tag <a> do iframe
+function removerTagA() {
+    // Seleciona o iframe
+    var iframe = document.querySelector('.calendly-inline-widget');
+    
+    // Verifica se o iframe foi encontrado
+    if (iframe) {
+        // Obtém o conteúdo do iframe
+        var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+        
+        // Seleciona o elemento <a> dentro do iframe
+        var link = iframeContent.querySelector('a');
+        
+        // Verifica se o elemento <a> foi encontrado
+        if (link) {
+            // Remove o elemento <a> do DOM
+            link.parentNode.removeChild(link);
+        }
+    }
+}
+
+// Chama a função para remover a tag <a> assim que a página for carregada
+window.onload = function() {
+    removerTagA();
+};
+
+    </script>
 </body>
 </html>
