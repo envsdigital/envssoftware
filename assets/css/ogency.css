@@ -1404,8 +1404,8 @@
 :root {
     --ogency-font: 'Plus Jakarta Sans', sans-serif;
     --heading-font: 'Plus Jakarta Sans', sans-serif;
-    --ogency-color: #a0a0a0;
-    --ogency-color-rgb: 160, 160, 160;
+    --ogency-color: #c8c8c8;
+    --ogency-color-rgb: 200, 200, 200;
     --ogency-base: #908AFF;
     --ogency-base-rgb: 144, 138, 255;
     --ogency-black: #191919;
@@ -1536,6 +1536,11 @@ h6 {
     overflow: hidden;
     z-index: 2;
     position: relative;
+}
+
+.ogency-btn:focus-visible {
+    outline: 3px solid var(--ogency-secondary);
+    outline-offset: 3px;
 }
 
 .ogency-btn::after {
@@ -3237,11 +3242,19 @@ h6 {
     }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-slider__one-item__content h2 {
+        font-size: 70px;
+        line-height: 72px;
+        letter-spacing: -3px;
+    }
+}
+
 @media (max-width: 767px) {
     .main-slider__one-item__content h2 {
-        font-size: 50px;
-        line-height: 55px;
-        letter-spacing: -2px;
+        font-size: 36px;
+        line-height: 42px;
+        letter-spacing: -1px;
     }
 }
 
@@ -4538,6 +4551,16 @@ h6 {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 .about-one__content {
     position: relative;
 }
@@ -4561,12 +4584,12 @@ h6 {
 }
 
 .about-one .ogency-btn {
-    background-color: var(--ogency-secondary);
-    color: var(--ogency-black);
+    background-color: var(--ogency-base);
+    color: var(--ogency-white);
 }
 
 .about-one .ogency-btn::after {
-    background: var(--ogency-base);
+    background: var(--ogency-secondary);
 }
 
 .about-one .ogency-btn:hover {
@@ -5090,7 +5113,10 @@ h6 {
     position: relative;
     background-color: var(--ogency-black2);
     padding: 40px 50px;
-    min-height: 348px;
+    min-height: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-one__item:hover {
@@ -6102,6 +6128,24 @@ h6 {
     mix-blend-mode: normal;
 }
 
+.team-one__item__image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(144, 138, 255, 0.75) 0%, rgba(191, 242, 78, 0.55) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.team-one__item:hover .team-one__item__image::before {
+    opacity: 1;
+}
+
 .team-one__item:hover .team-one__item__image::after {
     right: -20px;
     top: -20px;
@@ -6865,6 +6909,26 @@ h6 {
     position: relative;
     display: inline-flex;
     margin-bottom: 34px;
+}
+
+.cta-one__author::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scale(1);
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    border: 2px solid var(--ogency-base);
+    animation: cta-ring-pulse 2.5s ease-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes cta-ring-pulse {
+    0%   { transform: translateY(-50%) scale(1);    opacity: 0.8; }
+    100% { transform: translateY(-50%) scale(1.45); opacity: 0; }
 }
 
 .cta-one__author--wrap {
